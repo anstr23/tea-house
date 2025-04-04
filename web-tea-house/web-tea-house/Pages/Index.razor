@@ -1,0 +1,293 @@
+﻿@page "/"
+
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6 text-end">
+                        <img class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="img/about-1.jpg" alt="">
+                        <img class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="img/about-3.jpg" alt="">
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="img/about-4.jpg" alt="">
+                        <img class="img-fluid bg-white w-100 wow fadeIn" data-wow-delay="0.4s" src="img/about-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn text-center text-md-start" data-wow-delay="0.5s">
+                <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <p class="fs-5 fw-medium fst-italic text-primary">Про нас</p>
+                    <h1 class="display-6">Історія успіху TEA House за 25 років</h1>
+                </div>
+                <div class="row g-3 mb-4 align-items-center text-center text-md-start">
+                    <div class="col-sm-4">
+                        <img class="img-fluid bg-white w-100" src="img/about-5.jpg" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <h5>Наш чай — один з найпопулярніших напоїв у світі</h5>
+                        <p class="mb-0">Це є вишуканий вибір. Поєднання різних ароматичних верхніх чайних пелюсток робить цей смак просто не забутнім.</p>
+                    </div>
+                </div>
+                <div class="border-top mb-4"></div>
+                <div class="row g-3 align-items-center text-center text-md-start">
+                    <div class="col-sm-8">
+                        <h5>Щоденне вживання чашки чаю корисне для вашого здоров'я</h5>
+                        <p class="mb-0">Час від часу це був елітний вибір. Гіркота та солодкість чаю надають йому особливого смаку та ароматності.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid bg-white w-100" src="img/about-6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- About End -->
+<!-- Products Start -->
+<div class="container-fluid product py-5 my-5">
+    <div class="container py-5">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Наші продукти</p>
+            <h1 class="display-6">Склад чаю гармонійно створює неймовірний смак та заспокоює наш настрій.</h1>
+        </div>
+        <div class="card-deck">
+            @foreach (var tea in teaCards)
+            {
+                <div class="card">
+                    <img class="card-img-top" src="@tea.ImageSrc" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@tea.CardTitle</h5>
+                        <p class="card-text">@tea.CardDescription</p>
+                        <p class="card-text"><small class="text-muted">@tea.ShortDescription</small></p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+<!-- Article Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid" src="img/article.jpg" alt="">
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <p class="fs-5 fw-medium fst-italic text-primary">Рекомендувана стаття</p>
+                    <h1 class="display-6">Історія чайного листа у світі</h1>
+                </div>
+                <p class="mb-4">Час від часу це був елітний вибір. Гіркота та солодкість чаю надають йому особливого смаку та ароматності.</p>
+                <p class="mb-4">Чай – один із найдавніших і найпопулярніших напоїв у світі. Його історія налічує тисячі років і охоплює різні культури та континенти.</p>
+                <a href="" class="btn btn-primary rounded-pill py-3 px-5">Читати далі</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Article End -->
+<!-- Video Start -->
+<div class="container-fluid video my-5">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="py-5">
+                    <h1 class="display-6 mb-4">Чай — напій для <span class="text-white">здоров'я</span> та <span class="text-white">краси</span></h1>
+                    <h5 class="fw-normal lh-base fst-italic text-white mb-5">
+                        Сьогодні чай є невід'ємною частиною культури багатьох народів. Його вирощують у Китаї, Індії, Шрі-Ланці, Японії, Кенії та багатьох інших країнах. З'являються нові сорти, способи приготування та чайні традиції, які продовжують захоплювати людей по всьому світу.
+                        Чай – це не просто напій, а справжня історія, що об'єднує покоління та континенти.
+                    </h5>
+                    <div class="row g-4 mb-5">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="text-dark">Чудовий асортимент чаю</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="text-dark">Спеції та добавки</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="text-dark">Унікальні аксесуари</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="text-dark">Добре для здоров'я та краси</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-light rounded-pill py-3 px-5" href="#">Дізнатися більше</a>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                    <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="#" data-bs-target="#videoModal">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video End -->
+<!-- Video Modal Start -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">YouTube Video</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                    <iframe id="video" class="embed-responsive-item" src="https://www.youtube.com/embed/hOVd_PdJDb0?autoplay=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Video Modal End -->
+<!-- Store Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Інтернет-магазин</p>
+            <h1 class="display-6">Хочеш бути здоровим? Обирай смак чаю</h1>
+        </div>
+        <div class="row g-4">
+            @foreach (var item in storeItems)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="store-item position-relative text-center">
+                        <img class="img-fluid" src="@item.ImageSrc" alt="@item.TitleTea">
+                        <div class="p-4">
+                            <div class="text-center mb-3">
+                                @for (int i = 0; i < item.Rating; i++)
+                                {
+                                    <small class="fa fa-star text-primary"></small>
+                                }
+                            </div>
+                            <h4 class="mb-3">@item.TitleTea</h4>
+                            <p>@item.DescriptionTea</p>
+                            <h4 class="text-primary">$@item.Price</h4>
+                        </div>
+                        <div class="store-overlay">
+                            <a href="product-details/@item.Id" class="btn btn-primary rounded-pill py-2 px-4 m-2">
+                                More Detail <i class="fa fa-arrow-right ms-2"></i>
+                            </a>
+                            <a href="cart/add/@item.Id" class="btn btn-dark rounded-pill py-2 px-4 m-2">
+                                Add to Cart <i class="fa fa-cart-plus ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Store End -->
+<!-- Testimonial Start -->
+<div class="container-fluid product py-5">
+    <div class="container py-5">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Відгуки</p>
+            <h1 class="display-6">Що наші клієнти говорять про наш чай</h1>
+        </div>
+        <div class="card-deck">
+            @foreach (var card in testimonialCards)
+            {
+                <div class="col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="@card.ImageSrc" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@card.Title</h5>
+                            <p class="card-text">@card.Text</p>
+                            <p class="card-text"><small class="text-muted">@card.LastUpdated</small></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+feferfewrrfwfwefwef
+tw4t4t3yt354y5y
+<!-- Testimonial End -->
+<!-- Contact Start -->
+<div class="container-xxl contact py-5">
+    <div class="container">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Зв'язок з нами</p>
+            <h1 class="display-6">Зв'яжіться з нами прямо зараз</h1>
+        </div>
+        <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-8">
+                <p class="text-center mb-5">Ми завжди раді допомогти вам! Задавайте свої питання, і ми швидко відповімо. Ми працюємо для вашої зручності та задоволення.</p>
+                <div class="row g-5">
+                    <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="btn-square mx-auto mb-3">
+                            <i class="fa fa-envelope fa-2x text-white"></i>
+                        </div>
+                        <p class="mb-2">info@example.com</p>
+                        <p class="mb-0">support@example.com</p>
+                    </div>
+                    <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="btn-square mx-auto mb-3">
+                            <i class="fa fa-phone fa-2x text-white"></i>
+                        </div>
+                        <p class="mb-2">+012 345 67890</p>
+                        <p class="mb-0">+012 345 67890</p>
+                    </div>
+                    <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="btn-square mx-auto mb-3">
+                            <i class="fa fa-map-marker-alt fa-2x text-white"></i>
+                        </div>
+                        <p class="mb-2">Вулиця Зелена 123</p>
+                        <p class="mb-0">Львів</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contact Start -->
+@code {
+    private List<CardItemModel> teaCards = new List<CardItemModel>();
+    private List<StoreItemModel> storeItems = new List<StoreItemModel>();
+    private List<TestimonialCardModel> testimonialCards = new List<TestimonialCardModel>();
+
+    protected override void OnInitialized()
+    {
+        teaCards = IndexPageRepository.GetTeaCards();
+        storeItems = StoreItemRepository.GetStoreItems();
+        testimonialCards = TestimonialCardRepository.GetTestimonialCards();
+    }
+ }
