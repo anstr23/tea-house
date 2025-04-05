@@ -12,7 +12,7 @@ namespace web_tea_house.Repository
             ImageSrc = "./img/testimonial-1.jpg",
             Title = "Олена, любителька трав'яних чаїв",
             Text = "Я п'ю чай кожен день, і це справжня магія для душі. Зелений чай із жасмином – мій улюблений! Я відчуваю, як цей чай розслабляє і налаштовує на спокій.",
-            LastUpdated = "Оновлено 5 хвилин тому"
+            LastUpdated = "Оновлено 5 хвилин тому."
         },
         new TestimonialCardModel
         {
