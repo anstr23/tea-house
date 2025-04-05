@@ -1,19 +1,87 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
-<PageTitle>web-tea-house</PageTitle>
+<PageTitle>Tea House</PageTitle>
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
+   
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+        @switch (CurrentHeader)
+        {         
+            case HeaderType.HeaderAbout:
+                <HeaderAbout />
+                break;
 
-        <article class="content px-4">
-            @Body
-        </article>
+            case HeaderType.HeaderProducts:
+                <HeaderProducts />
+                break;
+                       
+
+            case HeaderType.HeaderShopTea:
+                <HeaderShopTea />
+                break;
+
+            case HeaderType.HeaderBlog:
+                <HeaderBlog />
+                break;
+                               
+
+            case HeaderType.HeaderContact:
+                <HeaderContact />
+                break;
+
+            default:
+                <Header />
+                break;
+        }
+        @Body
+       
     </main>
 </div>
+
+@code{
+    private HeaderType CurrentHeader;
+
+    protected override void OnInitialized()
+    {
+        SetHeader(NavigationManager.Uri);
+        NavigationManager.LocationChanged += (sender, args) => SetHeader(args.Location);
+    }
+
+      private void OnLocationChanged(object sender, LocationChangedEventArgs args)
+    {
+        SetHeader(args.Location);
+        StateHasChanged();
+    }  
+
+    protected enum HeaderType
+    {
+        Header,
+        HeaderAbout,
+        HeaderProducts,    
+        HeaderBlog,
+        HeaderShopTea,    
+        HeaderContact
+    }
+
+    private void SetHeader(string uri)
+    {
+        if (uri.Contains("about", StringComparison.OrdinalIgnoreCase))
+            CurrentHeader = HeaderType.HeaderAbout;
+        else if (uri.Contains("products", StringComparison.OrdinalIgnoreCase))
+            CurrentHeader = HeaderType.HeaderProducts;       
+        else if (uri.Contains("blog", StringComparison.OrdinalIgnoreCase))
+            CurrentHeader = HeaderType.HeaderBlog;
+        else if (uri.Contains("shop-tea", StringComparison.OrdinalIgnoreCase))
+            CurrentHeader = HeaderType.HeaderShopTea;   
+        else if (uri.Contains("contact", StringComparison.OrdinalIgnoreCase))
+            CurrentHeader = HeaderType.HeaderContact;
+        else
+            CurrentHeader = HeaderType.Header;
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
